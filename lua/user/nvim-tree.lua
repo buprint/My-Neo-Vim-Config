@@ -32,13 +32,13 @@ nvim_tree.setup {
           symlink_open = "",
         },
         git = {
-          unstaged = "",
-          staged = "S",
+          unstaged = "",
+          staged = "",
           unmerged = "",
-          renamed = "➜",
-          untracked = "U",
-          deleted = "",
-          ignored = "◌",
+          renamed = "פֿ",
+          untracked = " ",
+          deleted = "",
+          ignored = " ",
         },
       },
     },
@@ -55,7 +55,6 @@ nvim_tree.setup {
   },
   view = {
     width = 30,
-    height = 30,
     side = "left",
     mappings = {
       list = {
@@ -67,3 +66,5 @@ nvim_tree.setup {
   },
 }
 
+-- 
+-- 

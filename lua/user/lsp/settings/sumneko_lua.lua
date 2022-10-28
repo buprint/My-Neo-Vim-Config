@@ -1,17 +1,16 @@
--- LspInstall
-require'lspinstall'.setup()
-local servers = require'lspinstall'.installed_servers()
-local lspconfig = require'lspconfig'
-for _, server in pairs(servers) do
-    lspconfig[server].setup{}
-end
+return {
+	settings = {
 
-lspconfig.lua.setup{
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.stdpath("config") .. "/lua"] = true,
+				},
+			},
+		},
+	},
 }

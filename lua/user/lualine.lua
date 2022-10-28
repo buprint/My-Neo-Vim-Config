@@ -17,6 +17,7 @@ require('lualine').setup {
       winbar = 1000,
     }
   },
+  color = {bg = '#282c34'},
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
