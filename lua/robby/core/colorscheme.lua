@@ -1,19 +1,22 @@
-require("onedarkpro").setup({
-  dark_theme = "onedark_dark", -- The default dark theme
+local status_ok, onedarkpro = pcall(require, "onedarkpro")
+if not status_ok then
+  return
+end
+
+onedarkpro.setup({
+  dark_theme = "onedark_vivid", -- The default dark theme
   light_theme = "onelight", -- The default light theme
   caching = false, -- Use caching for the theme?
   cache_path = vim.fn.expand(vim.fn.stdpath("cache") .. "/onedarkpro/"), -- The path to the cache directory
   colors = {
+    bg = "#1D1F27",
   }, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
   highlights = {}, -- Override default highlight and/or filetype groups
   filetypes = { -- Override which filetype highlight groups are loaded
     javascript = true,
-    typescript = true,
-    html = true,
     lua = true,
     markdown = true,
     php = true,
-    python = true,
     ruby = true,
     rust = true,
     toml = true,
