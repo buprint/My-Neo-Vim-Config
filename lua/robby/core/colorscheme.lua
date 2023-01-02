@@ -4,22 +4,26 @@ if not status_ok then
 end
 
 onedarkpro.setup({
-  dark_theme = "onedark_vivid", -- The default dark theme
-  light_theme = "onelight", -- The default light theme
   caching = false, -- Use caching for the theme?
   cache_path = vim.fn.expand(vim.fn.stdpath("cache") .. "/onedarkpro/"), -- The path to the cache directory
   colors = {
-    bg = "#1D1F27",
-  }, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
+		onedark_vivid = {
+      bg = "#1D1F27"
+    }
+	}, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
   highlights = {}, -- Override default highlight and/or filetype groups
   filetypes = { -- Override which filetype highlight groups are loaded
     javascript = true,
     lua = true,
     markdown = true,
     php = true,
+    python = true,
     ruby = true,
     rust = true,
     toml = true,
+    typescript = true,
+    typescriptreact = true,
+    vue = true,
     yaml = true,
   },
   plugins = { -- Override which plugin highlight groups are loaded
@@ -46,7 +50,7 @@ onedarkpro.setup({
 
     cursorline = false, -- Use cursorline highlighting?
     transparency = false, -- Use a transparent background?
-    terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
+    terminal_colors = false, -- Use the theme's colors for Neovim's :terminal?
     window_unfocused_color = false, -- When the window is out of focus, change the normal background?
   }
 })

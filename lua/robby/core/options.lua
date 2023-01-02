@@ -24,7 +24,7 @@ local options = {
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  wrap = false,
+  wrap = true,
   expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
   tabstop = 2,                             -- insert 2 spaces for a tab
@@ -35,7 +35,6 @@ local options = {
   title = true,
 
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  wrap = true,                            -- display lines as one long line
   linebreak = true,                        -- companion to wrap, don't split words
   scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
@@ -59,9 +58,17 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-
-vim.opt.clipboard:append { 'unnamedplus' }
+vim.opt.clipboard = { 'unnamedplus' }
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+vim.cmd ":set paste"
+vim.cmd [[
+  let g:python3_host_prog = '/usr/bin/python3'
+  let g:python_host_prog = '/usr/bin/python'
+]]
+
+vim.o.t_Co="256"
+vim.cmd('syntax enable')

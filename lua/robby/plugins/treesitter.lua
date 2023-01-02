@@ -4,14 +4,15 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = { "java", "javascript", "css", "html", "typescript", "python" }, -- one of "all" or a list of languages
-	ignore_install = { "java" }, -- List of parsers to ignore installing
+	ensure_installed = { "java", "javascript", "css", "scss", "html", "typescript", "python", "http", "svelte", "c", "cpp", "help", "json", "json5", "yaml", "markdown", }, -- one of "all" or a list of languages
+	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "java" }, -- list of language that will be disabled
+		disable = { "" }, -- list of language that will be disabled
 	},
 	autopairs = {
 		enable = true,
 	},
 	indent = { enable = true, disable = { "java" } },
+  autotag = { enable = true },
 })

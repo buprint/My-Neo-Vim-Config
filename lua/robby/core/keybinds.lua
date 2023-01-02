@@ -34,7 +34,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("n", "<A-j>", "<esc>:m .+1<cr>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 
@@ -50,6 +50,8 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+
+-- Replace line with something
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
@@ -66,4 +68,20 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "<C-f>", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<C-t>", ":Telescope", opts)
+keymap("n", "<leader>t", ":Telescope<cr>", opts)
+
+-- Tabs and Window Split
+keymap("n", "ss", ":split<cr><C-k>", opts)
+keymap("n", "sv", ":vsplit<cr><C-l>", opts)
+
+-- Reload Neovim
+keymap("n", "<leader>r", ":source ~/.config/nvim/init.lua <cr>", opts)
+
+-- Close buffers without using the mouse
+keymap("n", "<leader>c", ":Bdelete <cr>", opts)
+
+-- Open files more quickly
+keymap("n", "<leader>ff", ":Telescope find_files<cr>", opts)
+
+-- Show Neovim Errors
+keymap("n", "<leader>e", ":messages<cr>", opts)

@@ -12,7 +12,7 @@ npairs.setup {
     java = false,
   },
   disable_filetype = { "TelescopePrompt", "spectre_panel" },
-  fast_wrap = { 
+  fast_wrap = {
     map = "<M-e>",
     chars = { "{", "[", "(", '"', "'" },
     pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
